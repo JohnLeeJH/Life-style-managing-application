@@ -11,7 +11,6 @@ function textInput(state = ['Complete project'], action) {
   }
 }
 
-// const reducer = combineReducers({ textInput })
 const store = Redux.createStore(textInput)
 
 const taskList = props => {
@@ -43,7 +42,6 @@ const taskList = props => {
 
 const render = () => {
   const tasks = store.getState()
-  console.log(tasks)
   const elements = React.createElement(taskList, { tasks })
   const $tasks = document.querySelector('#task-manager')
   ReactDOM.render(elements, $tasks)
