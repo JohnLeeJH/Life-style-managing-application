@@ -17,13 +17,16 @@ const taskList = props => {
   const { tasks } = props
   return (
   <div>
-    <div>
-      <input id="inputBox" type="text" placeholder="Add new tasks here"/>
-      <button><i id="add-button" className="fa fa-refresh fa-spin fa-3x fa-fw" aria-hidden="true"></i></button>
+    <div className="md-form input-group">
+      <input id="inputBox" type="search" className="form-control" placeholder="Add new tasks here"/>
+        <span className="input-group-btn">
+        <button id="add-button" className="btn btn-danger btn-lg" type="button">Add Task</button>
+        </span>
     </div>
     <div className="container">
-      <ul className="taskList" id="tasks">
+      <ul className="taskList">
         {tasks.map(function(task) {
+          if (task)
           return (
             <li>
               { task }
