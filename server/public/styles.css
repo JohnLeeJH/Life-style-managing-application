@@ -1,0 +1,60 @@
+.input-group {
+  box-shadow: 0 3px 2px rgba(44, 62, 80, 0.1);
+  margin: 10px;
+}
+
+#inputBox {
+  text-align: center;
+  width: 100%;
+  height: 46px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+}
+
+.taskList li {
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+  line-height: 22px;
+  background: #fff;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 3px 2px rgba(44, 62, 80, 0.1);
+  margin: 10px;
+  margin-left: 0;
+  padding: 14px 100px 14px 14px;
+}
+
+.buttons {
+  width: 100px;
+  height: 46px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.buttons button {
+  font-size: 30px;
+  width: 50px;
+  height: 46px;
+  float: left;
+  position: relative;
+  box-shadow: none;
+  outline: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.buttons button:last-child:before {
+  content: '';
+  width: 2px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background: #edf0f1;
+}
