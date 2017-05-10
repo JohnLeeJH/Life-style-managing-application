@@ -27,7 +27,6 @@ const TaskList = props => {
           <li key={i}>
             <span id={ task.id }>{ task.text }</span>
             <div className="buttons">
-              <button className="removed"><i className="fa fa-trash-o"></i></button>
               <button className="completed"><i className="fa fa-check"></i></button>
             </div>
           </li>
@@ -44,20 +43,14 @@ const render = () => {
   ReactDOM.render(elements, $tasks)
 }
 
-
 store.subscribe(render)
 
 render()
 
+var newId = 1
 document.querySelector('#add-button').addEventListener('click', function(event) {
-  console.log(event)
   const $inputBox = document.querySelector('#inputBox')
-  store.dispatch({ type: 'TASK_CREATED', text: $inputBox.value, id: taskId + 1})
+  var taskId = newId
+  newId += 1
+  store.dispatch({ type: 'TASK_CREATED',id:taskId , text: $inputBox.value})
 })
-
-// const removeTask = document.querySelector('.removed')
-// removeTask.addEventListener('click', function(event) {
-//   if(removeTask.index === event.index) {
-//     console.log('hi')
-//   }
-// })
