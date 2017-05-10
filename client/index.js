@@ -39,10 +39,11 @@ const TaskList = props => {
 
 const render = () => {
   const tasks = store.getState()
-  const elements = React.createElement(taskList, tasks)
+  const elements = React.createElement(TaskList, {tasks: tasks})
   const $tasks = document.querySelector('.taskList')
   ReactDOM.render(elements, $tasks)
 }
+
 
 store.subscribe(render)
 
