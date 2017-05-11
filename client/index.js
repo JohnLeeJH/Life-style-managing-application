@@ -24,10 +24,10 @@ const TaskList = props => {
       </div>
       {props.tasks.map(function(task, i) {
         return (
-          <li key={i}>
-            <span id={ task.id }>{ task.text }</span>
+          <li className="completed" key={i}>
+            <span>{ task.text }</span>
             <div className="buttons">
-              <button className="completed"><i className="fa fa-check"></i></button>
+              <button><i id={ task.id } className="fa fa-check"></i></button>
             </div>
           </li>
         )
@@ -38,7 +38,7 @@ const TaskList = props => {
 
 const render = () => {
   const tasks = store.getState()
-  const elements = React.createElement(TaskList, {tasks: tasks})
+  const elements = React.createElement(TaskList, { tasks })
   const $tasks = document.querySelector('.taskList')
   ReactDOM.render(elements, $tasks)
 }
@@ -53,4 +53,20 @@ document.querySelector('#add-button').addEventListener('click', function(event) 
   var taskId = newId
   newId += 1
   store.dispatch({ type: 'TASK_CREATED',id:taskId , text: $inputBox.value})
+})
+
+const completedTasks = document.querySelector('.taskList')
+completedTasks.addEventListener('click', function(event) {
+  if (event.target.id) {
+    clicked = true
+    $("i").click(function(){
+      if(clicked){
+        $(this).css('background', 'red')
+        clicked  = false;
+      } else {
+        $(this).css('background', 'white')
+        clicked  = true;
+      }
+    })
+  }
 })
