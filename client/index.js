@@ -50,13 +50,14 @@ render()
 var newId = 1
 document.querySelector('#add-button').addEventListener('click', function(event) {
   const $inputBox = document.querySelector('#inputBox')
-  var taskId = newId
-  newId += 1
-  store.dispatch({ type: 'TASK_CREATED',id:taskId , text: $inputBox.value})
+  if ($inputBox.value) {
+    var taskId = newId
+    newId += 1
+    store.dispatch({ type: 'TASK_CREATED',id:taskId , text: $inputBox.value})
+  }
 })
 
-const completedTasks = document.querySelector('.taskList')
-completedTasks.addEventListener('click', function(event) {
+document.querySelector('.taskList').addEventListener('click', function(event) {
   if (event.target.id) {
     clicked = true
     $("i").click(function(){
