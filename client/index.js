@@ -6,6 +6,11 @@ function textInput(state=[{id: 0, text: 'Complete project'}], action) {
   switch (action.type) {
     case 'TASK_CREATED' :
       return state.concat({text:action.text, id:action.id})
+    case 'TASK_DELETED' :
+      return [
+        ...state.slice(0, action.position),
+        ...state.slice(action.postion + 1)
+      ]
     default:
       return state
   }
