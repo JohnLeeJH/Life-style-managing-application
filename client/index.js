@@ -8,8 +8,8 @@ function textInput(state=[{id: 0, text: 'Complete project'}], action) {
       return state.concat({text:action.text, id:action.id})
     case 'TASK_DELETED' :
       return [
-        ...state.slice(0, action.position),
-        ...state.slice(action.postion + 1)
+        ...state.slice(0, action.id),
+        ...state.slice(action.id + 1)
       ]
     default:
       return state
@@ -17,7 +17,7 @@ function textInput(state=[{id: 0, text: 'Complete project'}], action) {
 }
 
 const store = Redux.createStore(textInput)
-
+window.store = store
 const TaskList = props => {
   return (
     <div>
@@ -32,6 +32,7 @@ const TaskList = props => {
           <li className="completed" key={i}>
             <span>{ task.text }</span>
             <div className="buttons">
+              <button><i id={ task.id } className="fa fa-trash"></i></button>
               <button><i id={ task.id } className="fa fa-check"></i></button>
             </div>
           </li>
@@ -58,21 +59,25 @@ document.querySelector('#add-button').addEventListener('click', function(event) 
   if ($inputBox.value) {
     var taskId = newId
     newId += 1
-    store.dispatch({ type: 'TASK_CREATED',id:taskId , text: $inputBox.value})
+    store.dispatch({ type: 'TASK_CREATED', text: $inputBox.value, id:taskId })
   }
 })
 
 document.querySelector('.taskList').addEventListener('click', function(event) {
-  if (event.target.id) {
+  if (event.target.id && event.target.className === 'fa fa-check') {
     clicked = true
-    $("i").click(function(){
+    $("i").click(function() {
       if(clicked){
         $(this).css('background', 'red')
-        clicked  = false;
+        clicked  = false
       } else {
         $(this).css('background', 'white')
-        clicked  = true;
+        clicked  = true
       }
     })
+  }
+  if (event.target.id && event.target.className === 'fa fa-trash') {
+    console.log(event.target.id)
+    store.dispatch({ type: 'TASK_DELETED', id: 1 })
   }
 })
