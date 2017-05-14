@@ -2,11 +2,11 @@ const React = require('react')
 const ReactDOM = require('react-dom')
 const Redux = require('redux')
 
-const tasks = (state = [{ id: 0, text: 'complete the project'}], action) => {
+const tasks = (state = [{ id: 0, text: 'Interview on Wednesday'}], action) => {
   switch (action.type) {
     case 'TASK_CREATE' :
       return state.concat(action.task)
-      case 'TASK_DELETE' :
+    case 'TASK_DELETE' :
       return [
         ...state.slice(0, action.id),
         ...state.slice(action.id + 1)
@@ -30,11 +30,12 @@ const TaskList = props => {
       {props.state.map(function(task, i) {
         return (
           <ul className="taskList"  key={i}>
+            <p id="time">{new Date().toDateString()}</p>
             <li className="completed">
               <span>{ task.text }</span>
               <div className="buttons">
                 <button><i className="fa fa-trash" id={ task.id } onClick={ taskDelete }></i></button>
-                <button><i className="fa fa-check"></i></button>
+                <button><i className="fa fa-check" onClick={ tastCompleted }></i></button>
               </div>
             </li>
           </ul>
@@ -63,11 +64,16 @@ const taskCreate = event => {
 }
 
 const taskDelete = event => {
-  console.log(event.target.id)
   store.dispatch({
     type: 'TASK_DELETE',
     id: event.target.id // need to fix matching id issue
-    })
+  })
+}
+
+const tastCompleted = event => {
+  store.dispatch({
+    type: 'TASK_COMPLETED'
+  })
 }
 
 const render = () => {
