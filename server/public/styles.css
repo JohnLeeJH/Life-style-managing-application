@@ -1,9 +1,35 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header,
+.marketing,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
 .input-group {
   box-shadow: 0 3px 2px rgba(44, 62, 80, 0.1);
   margin: 10px;
 }
 
-#inputBox {
+#input-box {
   text-align: center;
   width: 100%;
   height: 46px;
@@ -12,26 +38,22 @@
   color: #444;
 }
 
-.taskList li {
+.container li {
   text-align: center;
   width: 100%;
-  font-size: 14px;
-  font-weight: 500;
-  color: #444;
-  line-height: 22px;
-  background: #fff;
+  font-size: 24px;
   border-radius: 5px;
-  position: relative;
   box-shadow: 0 3px 2px rgba(44, 62, 80, 0.1);
   margin: 10px;
   margin-left: 0;
-  padding: 14px 100px 14px 14px;
+  padding: 14px 50px 14px 14px;
 }
 
 .buttons {
+  float: right;
   width: 100px;
   height: 46px;
-  position: absolute;
+  position: relative;
   top: 0;
   right: 0;
 }
