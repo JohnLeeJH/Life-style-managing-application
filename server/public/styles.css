@@ -1,60 +1,76 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header,
+.marketing,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.jumbotron {
+  color: #dc8a1b;
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
 .input-group {
-  box-shadow: 0 3px 2px rgba(44, 62, 80, 0.1);
+  box-shadow: 0 3px 2px #e5e5e5;
   margin: 10px;
 }
 
-#inputBox {
+#input-box {
   text-align: center;
   width: 100%;
-  height: 46px;
+  height: 45px;
   font-size: 14px;
   font-weight: 500;
-  color: #444;
+  color: #dc8a1b;
 }
 
-.taskList li {
+#all-tasks li {
   text-align: center;
+  color: #dc8a1b;
   width: 100%;
-  font-size: 14px;
-  font-weight: 500;
-  color: #444;
-  line-height: 22px;
-  background: #fff;
+  font-size: 24px;
   border-radius: 5px;
-  position: relative;
-  box-shadow: 0 3px 2px rgba(44, 62, 80, 0.1);
+  box-shadow: 0 3px 2px #e5e5e5;
   margin: 10px;
   margin-left: 0;
-  padding: 14px 100px 14px 14px;
+  padding: 14px 50px 14px 14px;
 }
 
-.buttons {
+.icons {
+  float: right;
   width: 100px;
-  height: 46px;
-  position: absolute;
-  top: 0;
-  right: 0;
+  height: 45px;
 }
 
-.buttons button {
+.icons button {
+  float: left;
   font-size: 30px;
   width: 50px;
-  height: 46px;
-  float: left;
+  height: 45px;
   position: relative;
-  box-shadow: none;
+  box-shadow: #e5e5e5;
   outline: none;
   background: none;
-  border: 0;
+  border: none;
   cursor: pointer;
 }
 
-.buttons button:last-child:before {
-  content: '';
-  width: 2px;
-  height: 30px;
-  position: absolute;
-  top: 10px;
-  left: 0;
-  background: #edf0f1;
+#break-line {
+  width: 100%;
+  max-height: 30px;
 }

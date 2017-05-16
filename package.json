@@ -4,9 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "browserify client/index.js -t babelify -o server/public/main.js",
-    "bundle:watch": "watchify client/ -vd -t babelify -o server/public/main.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -18,16 +16,5 @@
   "bugs": {
     "url": "https://github.com/JohnLeeJH/Daily-task-manager-app/issues"
   },
-  "homepage": "https://github.com/JohnLeeJH/Daily-task-manager-app#readme",
-  "dependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "redux": "^3.6.0"
-  },
-  "devDependencies": {
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babelify": "^7.3.0",
-    "browserify": "^14.3.0",
-    "watchify": "^3.9.0"
-  }
+  "homepage": "https://github.com/JohnLeeJH/Daily-task-manager-app#readme"
 }
