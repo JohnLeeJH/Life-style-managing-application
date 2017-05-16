@@ -50,6 +50,16 @@
   cursor: pointer;
 }
 
+.icons button:last-child:before {
+  content: '';
+  width: 2px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background: #585148;
+}
+
 #break-line {
   width: 690px;
   max-height: 30px;
