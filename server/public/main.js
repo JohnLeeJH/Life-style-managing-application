@@ -42,3 +42,10 @@ addButton.addEventListener('click', function() {
     document.getElementById('input-box').value = ''
   }
 })
+
+function removeTask() {
+  const task = this.parentNode.parentNode
+  const list = task.parentNode
+  list.removeChild(task)
+}
+document.querySelector('.remove').addEventListener('click', removeTask)
