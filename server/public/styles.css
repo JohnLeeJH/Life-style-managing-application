@@ -50,7 +50,7 @@
   cursor: pointer;
 }
 
-.icons button:last-child:before {
+.icons button:last-child::before {
   content: '';
   width: 2px;
   height: 30px;
@@ -80,10 +80,6 @@
   overflow-y: auto;
   z-index: 1000;
   transition: all 0.4s ease 0s;
-}
-
-#page-content-wrapper {
-  width: 100%;
 }
 
 .sidebar-nav {
@@ -150,4 +146,68 @@
 
 .inset {
   padding: 20px;
+}
+
+#journal-page {
+  position: absolute;
+  display: block;
+  margin: auto;
+  background-image: url('http://www.gardensandcrafts.com/images/printables/gj6.jpg');
+  background-size: cover;
+  width: 1000px;
+  height: 1250px;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+#journal-form {
+  position: relative;
+  background: none;
+  border-radius: 10px;
+  top: 200px;
+  left: 100px;
+  height: 930px;
+  width: 800px;
+  color: #a555de;
+  font-size: 19px;
+}
+
+#journal-title {
+  text-align: center;
+  position: relative;
+  background: none;
+  border-radius: 10px;
+  border-color: #a555de;
+  border-width: thin;
+  top: 180px;
+  left: 110px;
+  height: 50px;
+  width: 370px;
+  color: #a555de;
+  font-size: 19px;
+}
+
+#journal-date {
+  text-align: center;
+  position: relative;
+  background: none;
+  border-radius: 10px;
+  border-color: #a555de;
+  border-width: thin;
+  top: 180px;
+  left: 150px;
+  height: 50px;
+  width: 370px;
+  color: #a555de;
+  font-size: 19px;
+}
+
+#journal-save {
+  color: white;
+  display: inline-block;
+  position: relative;
+  width: 800px;
+  top: 185px;
+  left: 100px;
+  background-color: #a555de;
 }

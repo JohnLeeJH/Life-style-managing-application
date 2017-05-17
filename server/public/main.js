@@ -1,11 +1,32 @@
-let newId = 1
+
+function completedTask() {
+  const task = this.parentNode.parentNode
+  const taskList = document.querySelector('#incompleted')
+  const completedList = document.querySelector('#completed')
+  if (this.parentNode.parentNode.parentNode.id === 'incompleted') {
+    taskList.removeChild(task)
+    completedList.appendChild(task)
+  }
+  else {
+    completedList.removeChild(task)
+    taskList.appendChild(task)
+  }
+}
+
+function removeTask() {
+  const task = this.parentNode.parentNode
+  const taskList = task.parentNode
+  taskList.removeChild(task)
+}
+
 function getId() {
+  let newId = 1
   const taskId = newId
   newId += 1
   return taskId
 }
 
-const addTask = task => {
+const taskManager = task => {
   const taskList = document.querySelector('#incompleted')
   const newTask = document.createElement('li')
   newTask.textContent = task
@@ -38,32 +59,49 @@ const addTask = task => {
   completed.appendChild(completeIcon)
 }
 
-const addButton = document.querySelector('#add-task')
-addButton.addEventListener('click', function() {
+const addTask = document.querySelector('#add-task')
+addTask.addEventListener('click', function() {
   const text = document.querySelector('#input-box')
   let value = text.value
   if (value) {
-    addTask(value)
+    taskManager(value)
     document.querySelector('#input-box').value = ''
   }
 })
 
-function completedTask() {
-  const task = this.parentNode.parentNode
-  const taskList = document.querySelector('#incompleted')
-  const completedList = document.querySelector('#completed')
-  if (this.parentNode.parentNode.parentNode.id === 'incompleted') {
-    taskList.removeChild(task)
-    completedList.appendChild(task)
-  }
-  else {
-    completedList.removeChild(task)
-    taskList.appendChild(task)
-  }
+function writeJournal() {
+  var journalPage = document.getElementById('journal-page')
+
+  var journalFrame = document.createElement('div')
+
+  var journalTitle = document.createElement('input')
+  journalTitle.setAttribute('id', 'journal-title')
+  journalTitle.setAttribute('type', 'text')
+  journalTitle.setAttribute('placeholder', 'Title')
+
+  var journalDate = document.createElement('input')
+  journalDate.setAttribute('id', 'journal-date')
+  journalDate.setAttribute('type', 'text')
+  journalDate.setAttribute('placeholder', 'Date')
+
+  var journalForm = document.createElement('textarea')
+  journalForm.setAttribute('id', 'journal-form')
+  journalForm.setAttribute('placeholder', 'Write Journal')
+
+  var journalSave = document.createElement('button')
+  journalSave.setAttribute('id', 'journal-save')
+  journalSave.setAttribute('type', 'button')
+  journalSave.classList.add('btn')
+  journalSave.classList.add('btn-secondary')
+  journalSave.classList.add('btn-lg')
+  journalSave.classList.add('btn-block')
+  journalSave.textContent = 'Save Journal'
+
+  journalPage.appendChild(journalFrame)
+  journalFrame.appendChild(journalTitle)
+  journalFrame.appendChild(journalDate)
+  journalFrame.appendChild(journalForm)
+  journalFrame.appendChild(journalSave)
 }
 
-function removeTask() {
-  const task = this.parentNode.parentNode
-  const taskList = task.parentNode
-  taskList.removeChild(task)
-}
+writeJournal()
