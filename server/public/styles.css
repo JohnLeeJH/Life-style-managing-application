@@ -1,17 +1,13 @@
 #task-manager {
   padding-top: 20px;
   padding-bottom: 20px;
-  width: 600px;
-}
-
-.input-group {
-  box-shadow: 0 3px 2px #e5e5e5;
-  margin: 10px;
+  width: 800px;
+  display: block;
 }
 
 #input-box {
   text-align: center;
-  width: 600px;
+  width: 800px;
   height: 45px;
   font-size: 14px;
   font-weight: 500;
@@ -22,13 +18,23 @@
 #all-tasks li {
   text-align: center;
   color: #585148;
-  width: 600px;
+  width: 800px;
   font-size: 24px;
   border-radius: 5px;
   box-shadow: 0 3px 2px #e5e5e5;
   margin: 10px;
   margin-left: 0;
   padding: 14px 50px 14px 14px;
+}
+
+#break-line {
+  width: 890px;
+  max-height: 30px;
+}
+
+.input-group {
+  box-shadow: 0 3px 2px #e5e5e5;
+  margin: 10px;
 }
 
 .icons {
@@ -52,17 +58,12 @@
 
 .icons button:last-child::before {
   content: '';
-  width: 2px;
+  width: 3px;
   height: 30px;
   position: absolute;
   top: 10px;
   left: 0;
   background: #585148;
-}
-
-#break-line {
-  width: 690px;
-  max-height: 30px;
 }
 
 #wrapper {
@@ -210,4 +211,22 @@
   top: 185px;
   left: 100px;
   background-color: #a555de;
+}
+
+#main-page {
+  position: fixed;
+  margin: auto;
+  background-image:
+    linear-gradient(
+      rgba(102, 62, 227, 0.6),
+      rgba(102, 62, 227, 0.6)
+    ),
+    url(images/calender.png);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#main-page h1 {
+  left: 400px;
 }
