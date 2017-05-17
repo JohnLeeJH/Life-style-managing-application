@@ -1,28 +1,7 @@
-body {
+#task-manager {
   padding-top: 20px;
   padding-bottom: 20px;
-}
-
-.header,
-.marketing,
-.footer {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-.header {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.jumbotron {
-  color: #dc8a1b;
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.header {
-  margin-bottom: 30px;
+  width: 600px;
 }
 
 .input-group {
@@ -32,17 +11,18 @@ body {
 
 #input-box {
   text-align: center;
-  width: 100%;
+  width: 600px;
   height: 45px;
   font-size: 14px;
   font-weight: 500;
-  color: #dc8a1b;
+  color: #585148;
+  box-shadow: 0 3px 2px #e5e5e5;
 }
 
 #all-tasks li {
   text-align: center;
-  color: #dc8a1b;
-  width: 100%;
+  color: #585148;
+  width: 600px;
   font-size: 24px;
   border-radius: 5px;
   box-shadow: 0 3px 2px #e5e5e5;
@@ -63,14 +43,111 @@ body {
   width: 50px;
   height: 45px;
   position: relative;
-  box-shadow: #e5e5e5;
+  box-shadow: none;
   outline: none;
   background: none;
   border: none;
   cursor: pointer;
 }
 
+.icons button:last-child:before {
+  content: '';
+  width: 2px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background: #585148;
+}
+
 #break-line {
-  width: 100%;
+  width: 690px;
   max-height: 30px;
+}
+
+#wrapper {
+  padding-left: 250px;
+  transition: all 0.4s ease 0s;
+}
+
+#sidebar-wrapper {
+  margin-left: -250px;
+  left: 250px;
+  width: 250px;
+  background: #000;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+}
+
+#page-content-wrapper {
+  width: 100%;
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav li {
+  line-height: 40px;
+  text-indent: 20px;
+}
+
+.sidebar-nav li a {
+  color: #999;
+  display: block;
+  text-decoration: none;
+}
+
+.sidebar-nav li a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  line-height: 60px;
+  font-size: 18px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+.content-header {
+  height: 65px;
+  line-height: 65px;
+}
+
+.content-header h1 {
+  margin: 0;
+  margin-left: 20px;
+  line-height: 65px;
+  display: inline-block;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.inset {
+  padding: 20px;
 }

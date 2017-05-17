@@ -20,6 +20,7 @@ const addTask = task => {
 
   const deleteIcon = document.createElement('i')
   deleteIcon.classList.add('fa-trash')
+  deleteIcon.classList.add('fa')
 
   const completed = document.createElement('button')
   completed.classList.add('complete')
@@ -27,6 +28,7 @@ const addTask = task => {
 
   const completeIcon = document.createElement('i')
   completeIcon.classList.add('fa-check')
+  completeIcon.classList.add('fa')
 
   taskList.appendChild(newTask)
   newTask.appendChild(icons)
@@ -42,7 +44,7 @@ addButton.addEventListener('click', function() {
   let value = text.value
   if (value) {
     addTask(value)
-    value = ''
+    document.querySelector('#input-box').value = ''
   }
 })
 

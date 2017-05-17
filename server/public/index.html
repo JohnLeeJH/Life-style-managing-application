@@ -15,39 +15,52 @@
     crossorigin="anonymous"/>
     <link rel="stylesheet" href="styles.css"/>
   </head>
-
   <body>
-    <header>
-      <div class="container">
-        <div class="header clearfix">
-          <nav id="main-nav" class="navbar navbar-default navbar-fixed-top navbar-custom">
-            <div class="container">
-              <div class="navbar-header page-scroll">
-                <a class="navbar-brand" href="#page-top">Task Manager App</a>
+    <div id="wrapper">
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand"><a href="#">Life style managing</a>
+          </li>
+          <li><a href="#">Task manager</a>
+          </li>
+          <li><a href="#">Journal</a>
+          </li>
+        </ul>
+      </div>
+
+      <div id="task-manager">
+        <div id="page-content-wrapper">
+          <div class="content-header">
+            <h1>
+              <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+              Task Manager App
+            </h1>
+          </div>
+          <div class="page-content inset">
+            <div class="row">
+              <div class="col-md-12">
+                <p class="lead">This simple task manager app is...write something</p>
               </div>
             </div>
-          </nav>
+          </div>
+          <div class="md-form input-group">
+            <input id="input-box" type="text" class="form-control" placeholder="Add new tasks here"/>
+            <span class="input-group-btn">
+              <button id="add-task" class="btn btn-black btn-lg" type="button">Add Task</button>
+            </span>
+          </div>
+          <div class="container" id="all-tasks">
+            <ul id="incompleted">
+            </ul>
+            <img src="line-break.png" alt="break-line" id="break-line"/>
+            <ul id="completed">
+            </ul>
+          </div>
         </div>
-        <div class="jumbotron">
-          <h1>Daily Task Manager</h1>
-          <p class="lead">Manage daily tasks</p>
-        </div>
-
       </div>
-      <div class="md-form input-group">
-        <input id="input-box" type="text" class="form-control" placeholder="Add new tasks here"/>
-        <span class="input-group-btn">
-        <button id="add-task" class="btn btn-danger btn-lg" type="button">Add Task</button>
-        </span>
-      </div>
-    </header>
 
-    <div class="container" id="all-tasks">
-      <ul class="task-list" id="incompleted">
-      </ul>
-      <img src="line-break.png" alt="break-line" id="break-line"/>
-      <ul class="task-list" id="completed">
-      </ul>
+      <div id="journal">
+      </div>
     </div>
     <script src="main.js"></script>
   </body>
