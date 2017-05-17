@@ -218,8 +218,8 @@
   margin: auto;
   background-image:
     linear-gradient(
-      rgba(102, 62, 227, 0.6),
-      rgba(102, 62, 227, 0.6)
+      rgba(44, 187, 185, 0.6),
+      rgba(44, 187, 185, 0.6)
     ),
     url(images/calender.png);
   background-size: cover;
@@ -227,6 +227,34 @@
   height: 100%;
 }
 
-#main-page h1 {
-  left: 400px;
+#recipes-updates h2 {
+  font-family: serif;
+  text-align: center;
+  font-size: 44px;
+}
+
+.new-recipes {
+  margin-bottom: 40px;
+}
+
+.new-images {
+  width: 400px;
+  height: 300px;
+}
+
+.new-disc h4 {
+  margin-top: 50px;
+  font-family: sans-serif;
+}
+
+.new-disc h5 {
+  font-family: sans-serif;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.new-disc p {
+  font-family: sans-serif;
+  font-size: 18px;
 }
