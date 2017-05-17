@@ -70,25 +70,25 @@ addTask.addEventListener('click', function() {
 })
 
 function writeJournal() {
-  var journalPage = document.getElementById('journal-page')
+  const journalPage = document.getElementById('journal-page')
 
-  var journalFrame = document.createElement('div')
+  const journalFrame = document.createElement('div')
 
-  var journalTitle = document.createElement('input')
+  const journalTitle = document.createElement('input')
   journalTitle.setAttribute('id', 'journal-title')
   journalTitle.setAttribute('type', 'text')
   journalTitle.setAttribute('placeholder', 'Title')
 
-  var journalDate = document.createElement('input')
+  const journalDate = document.createElement('input')
   journalDate.setAttribute('id', 'journal-date')
   journalDate.setAttribute('type', 'text')
   journalDate.setAttribute('placeholder', 'Date')
 
-  var journalForm = document.createElement('textarea')
+  const journalForm = document.createElement('textarea')
   journalForm.setAttribute('id', 'journal-form')
   journalForm.setAttribute('placeholder', 'Write Journal')
 
-  var journalSave = document.createElement('button')
+  const journalSave = document.createElement('button')
   journalSave.setAttribute('id', 'journal-save')
   journalSave.setAttribute('type', 'button')
   journalSave.classList.add('btn')
@@ -103,5 +103,25 @@ function writeJournal() {
   journalFrame.appendChild(journalForm)
   journalFrame.appendChild(journalSave)
 }
-
 writeJournal()
+
+document.getElementById('apps').addEventListener('click', function(event) {
+  const mainPage = document.getElementById('main-page')
+  const taskFeature = document.getElementById('task-manager')
+  const journalFeature = document.getElementById('journal-page')
+  if (event.target.id === 'landing-page') {
+    mainPage.classList.remove('hidden')
+    taskFeature.classList.add('hidden')
+    journalFeature.classList.add('hidden')
+  }
+  else if (event.target.id === 'task-feature') {
+    taskFeature.classList.remove('hidden')
+    journalFeature.classList.add('hidden')
+    mainPage.classList.add('hidden')
+  }
+  else if (event.target.id === 'journal-feature') {
+    journalFeature.classList.remove('hidden')
+    taskFeature.classList.add('hidden')
+    mainPage.classList.add('hidden')
+  }
+})
