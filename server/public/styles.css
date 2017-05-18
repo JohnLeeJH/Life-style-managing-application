@@ -27,79 +27,11 @@
   font-family: 'Oswald', sans-serif;
 }
 
-#apps li {
+#features li {
   text-align: center;
   margin-top: 30px;
   font-size: 27px;
-  font-family: 'Barrio', cursive;
-}
-
-#task-manager {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  width: 800px;
-  display: block;
-}
-
-#input-box {
-  text-align: center;
-  width: 800px;
-  height: 45px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #585148;
-  box-shadow: 0 3px 2px #e5e5e5;
-}
-
-#all-tasks li {
-  text-align: center;
-  color: #585148;
-  width: 800px;
-  font-size: 24px;
-  border-radius: 5px;
-  box-shadow: 0 3px 2px #e5e5e5;
-  margin: 10px;
-  margin-left: 0;
-  padding: 14px 50px 14px 14px;
-}
-
-#break-line {
-  width: 890px;
-  max-height: 30px;
-}
-
-.input-group {
-  box-shadow: 0 3px 2px #e5e5e5;
-  margin: 10px;
-}
-
-.icons {
-  float: right;
-  width: 100px;
-  height: 45px;
-}
-
-.icons button {
-  float: left;
-  font-size: 30px;
-  width: 50px;
-  height: 45px;
-  position: relative;
-  box-shadow: none;
-  outline: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.icons button:last-child::before {
-  content: '';
-  width: 3px;
-  height: 30px;
-  position: absolute;
-  top: 10px;
-  left: 0;
-  background: #585148;
+  font-family: 'Barrio', sans-serif;
 }
 
 #wrapper {
@@ -174,15 +106,97 @@
   margin: 0;
   margin-left: 20px;
   line-height: 65px;
-  display: inline-block;
 }
 
-#menu-toggle {
-  display: none;
+#task-manager {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 800px;
+  font-size: 52px;
+  background-image: url(https://cdn.dribbble.com/users/1104799/screenshots/3496211/home_ui_icons_d_2x.png);
+  background-position: top;
 }
 
-.inset {
-  padding: 20px;
+#task-manager h1 {
+  font-size: 72px;
+  color: #008000;
+  font-family: 'Barrio', sans-serif;
+}
+
+#task-manager p {
+  font-size: 34px;
+  color: #008000;
+  font-family: 'Oswald', sans-serif;
+}
+
+#input-box {
+  text-align: center;
+  width: 800px;
+  height: 45px;
+  font-weight: 500;
+  font-size: 24px;
+  font-family: 'Oswald', sans-serif;
+  color: #008000;
+  box-shadow: 2 2px 2px #e5e5e5;
+}
+
+#all-tasks li {
+  text-align: center;
+  width: 800px;
+  font-size: 34px;
+  font-family: 'Oswald', sans-serif;
+  border-radius: 5px;
+  box-shadow: 0 3px 2px #e5e5e5;
+  margin: 10px;
+  margin-left: 0;
+  padding: 14px 50px 14px 14px;
+}
+
+#incompleted li {
+  color: #f0f;
+}
+
+#completed li {
+  color: #000080;
+}
+
+#break-line {
+  width: 890px;
+  max-height: 30px;
+}
+
+.input-group {
+  box-shadow: 0 3px 2px #e5e5e5;
+  margin: 10px;
+}
+
+.icons {
+  float: right;
+  width: 100px;
+  height: 45px;
+}
+
+.icons button {
+  float: left;
+  font-size: 30px;
+  width: 50px;
+  height: 45px;
+  position: relative;
+  box-shadow: none;
+  outline: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icons button:last-child::before {
+  content: '';
+  width: 3px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background: #008000;
 }
 
 #journal-page {
@@ -194,7 +208,6 @@
   width: 1000px;
   height: 1250px;
   opacity: 0.6;
-  z-index: -1;
 }
 
 #journal-form {

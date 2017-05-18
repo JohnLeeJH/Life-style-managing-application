@@ -1,4 +1,4 @@
-
+// main page
 function menuHome() {
   const mainPage = document.getElementById('main-page')
   const headLine = document.createElement('h1')
@@ -8,6 +8,7 @@ function menuHome() {
 
   mainPage.appendChild(headLine)
   mainPage.appendChild(message)
+  return mainPage
 }
 menuHome()
 
@@ -36,31 +37,30 @@ const taskManager = task => {
   const taskList = document.querySelector('#incompleted')
   const newTask = document.createElement('li')
   newTask.textContent = task
+  taskList.appendChild(newTask)
 
   const icons = document.createElement('div')
   icons.classList.add('icons')
+  newTask.appendChild(icons)
 
   const remove = document.createElement('button')
   remove.classList.add('remove')
   remove.addEventListener('click', removeTask)
+  icons.appendChild(remove)
 
   const deleteIcon = document.createElement('i')
   deleteIcon.classList.add('fa-trash')
   deleteIcon.classList.add('fa')
+  remove.appendChild(deleteIcon)
 
   const completed = document.createElement('button')
   completed.classList.add('complete')
   completed.addEventListener('click', completedTask)
+  icons.appendChild(completed)
 
   const completeIcon = document.createElement('i')
   completeIcon.classList.add('fa-check')
   completeIcon.classList.add('fa')
-
-  taskList.appendChild(newTask)
-  newTask.appendChild(icons)
-  icons.appendChild(remove)
-  remove.appendChild(deleteIcon)
-  icons.appendChild(completed)
   completed.appendChild(completeIcon)
 }
 
@@ -110,7 +110,7 @@ function writeJournal() {
 }
 writeJournal()
 
-document.getElementById('apps').addEventListener('click', function(event) {
+document.getElementById('features').addEventListener('click', function(event) {
   const mainPage = document.getElementById('main-page')
   const taskFeature = document.getElementById('task-manager')
   const journalFeature = document.getElementById('journal-page')
