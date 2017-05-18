@@ -1,3 +1,16 @@
+
+function menuHome() {
+  const mainPage = document.getElementById('main-page')
+  const headLine = document.createElement('h1')
+  headLine.textContent = 'DAY | RUNNER'
+  const message = document.createElement('h2')
+  message.textContent = 'The key to time management is to see the value of every moment.'
+
+  mainPage.appendChild(headLine)
+  mainPage.appendChild(message)
+}
+menuHome()
+
 // task manager feature
 function completedTask() {
   const task = this.parentNode.parentNode
@@ -19,18 +32,10 @@ function removeTask() {
   taskList.removeChild(task)
 }
 
-function getId() {
-  let newId = 1
-  const taskId = newId
-  newId += 1
-  return taskId
-}
-
 const taskManager = task => {
   const taskList = document.querySelector('#incompleted')
   const newTask = document.createElement('li')
   newTask.textContent = task
-  newTask.id = getId()
 
   const icons = document.createElement('div')
   icons.classList.add('icons')
