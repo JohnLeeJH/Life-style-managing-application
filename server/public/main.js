@@ -1,3 +1,17 @@
+// main page
+function menuHome() {
+  const mainPage = document.getElementById('main-page')
+  const headLine = document.createElement('h1')
+  headLine.textContent = 'DAY | RUNNER'
+  const message = document.createElement('h2')
+  message.textContent = 'The key to time management is to see the value of every moment.'
+
+  mainPage.appendChild(headLine)
+  mainPage.appendChild(message)
+  return mainPage
+}
+menuHome()
+
 // task manager feature
 function completedTask() {
   const task = this.parentNode.parentNode
@@ -19,43 +33,34 @@ function removeTask() {
   taskList.removeChild(task)
 }
 
-function getId() {
-  let newId = 1
-  const taskId = newId
-  newId += 1
-  return taskId
-}
-
 const taskManager = task => {
   const taskList = document.querySelector('#incompleted')
   const newTask = document.createElement('li')
   newTask.textContent = task
-  newTask.id = getId()
+  taskList.appendChild(newTask)
 
   const icons = document.createElement('div')
   icons.classList.add('icons')
+  newTask.appendChild(icons)
 
   const remove = document.createElement('button')
   remove.classList.add('remove')
   remove.addEventListener('click', removeTask)
+  icons.appendChild(remove)
 
   const deleteIcon = document.createElement('i')
   deleteIcon.classList.add('fa-trash')
   deleteIcon.classList.add('fa')
+  remove.appendChild(deleteIcon)
 
   const completed = document.createElement('button')
   completed.classList.add('complete')
   completed.addEventListener('click', completedTask)
+  icons.appendChild(completed)
 
   const completeIcon = document.createElement('i')
   completeIcon.classList.add('fa-check')
   completeIcon.classList.add('fa')
-
-  taskList.appendChild(newTask)
-  newTask.appendChild(icons)
-  icons.appendChild(remove)
-  remove.appendChild(deleteIcon)
-  icons.appendChild(completed)
   completed.appendChild(completeIcon)
 }
 
@@ -71,18 +76,12 @@ addTask.addEventListener('click', function() {
 // journal feature
 function writeJournal() {
   const journalPage = document.getElementById('journal-page')
+  const date = document.createElement('p')
+  date.textContent = new Date().toDateString()
+  date.classList.add('date')
+  journalPage.appendChild(date)
 
   const journalFrame = document.createElement('div')
-
-  const journalTitle = document.createElement('input')
-  journalTitle.setAttribute('id', 'journal-title')
-  journalTitle.setAttribute('type', 'text')
-  journalTitle.setAttribute('placeholder', 'Title')
-
-  const journalDate = document.createElement('input')
-  journalDate.setAttribute('id', 'journal-date')
-  journalDate.setAttribute('type', 'text')
-  journalDate.setAttribute('placeholder', 'Date')
 
   const journalForm = document.createElement('textarea')
   journalForm.setAttribute('id', 'journal-form')
@@ -98,14 +97,12 @@ function writeJournal() {
   journalSave.textContent = 'Save Journal'
 
   journalPage.appendChild(journalFrame)
-  journalFrame.appendChild(journalTitle)
-  journalFrame.appendChild(journalDate)
   journalFrame.appendChild(journalForm)
   journalFrame.appendChild(journalSave)
 }
 writeJournal()
 
-document.getElementById('apps').addEventListener('click', function(event) {
+document.getElementById('features').addEventListener('click', function(event) {
   const mainPage = document.getElementById('main-page')
   const taskFeature = document.getElementById('task-manager')
   const journalFeature = document.getElementById('journal-page')
@@ -263,6 +260,7 @@ function cookingDirection(recipe) {
   recipeTitle.appendChild(descriptionDetails)
 
   const directionsName = document.createElement('h4')
+  directionsName.classList.add('new-disc')
   directionsName.textContent = recipe.name
   descriptionDetails.appendChild(directionsName)
 
@@ -323,6 +321,7 @@ function cookingDirection(recipe) {
   directionsSteps.appendChild(recipesCookingSteps)
 
   const closeDirections = document.createElement('input')
+  closeDirections.classList.add('button-design')
   closeDirections.setAttribute('type', 'button')
   closeDirections.setAttribute('value', 'Enjoy Cooking!')
   closeDirections.setAttribute('id', recipe.id)

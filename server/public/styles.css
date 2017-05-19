@@ -1,69 +1,37 @@
-#task-manager {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  width: 800px;
-  display: block;
+
+#main-page {
+  position: fixed;
+  margin: auto;
+  background-image:
+    linear-gradient(
+      rgba(44, 187, 185, 0.6),
+      rgba(44, 187, 185, 0.6)
+    ),
+    url('images/main-image.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 
-#input-box {
+#main-page h1 {
+  margin-left: 100px;
+  margin-top: 150px;
+  font-size: 144px;
+  font-family: 'Barrio', sans-serif;
+}
+
+#main-page h2 {
+  margin-left: 100px;
+  margin-top: 40px;
+  font-size: 52px;
+  font-family: 'Oswald', sans-serif;
+}
+
+#features li {
   text-align: center;
-  width: 800px;
-  height: 45px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #585148;
-  box-shadow: 0 3px 2px #e5e5e5;
-}
-
-#all-tasks li {
-  text-align: center;
-  color: #585148;
-  width: 800px;
-  font-size: 24px;
-  border-radius: 5px;
-  box-shadow: 0 3px 2px #e5e5e5;
-  margin: 10px;
-  margin-left: 0;
-  padding: 14px 50px 14px 14px;
-}
-
-#break-line {
-  width: 890px;
-  max-height: 30px;
-}
-
-.input-group {
-  box-shadow: 0 3px 2px #e5e5e5;
-  margin: 10px;
-}
-
-.icons {
-  float: right;
-  width: 100px;
-  height: 45px;
-}
-
-.icons button {
-  float: left;
-  font-size: 30px;
-  width: 50px;
-  height: 45px;
-  position: relative;
-  box-shadow: none;
-  outline: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.icons button:last-child::before {
-  content: '';
-  width: 3px;
-  height: 30px;
-  position: absolute;
-  top: 10px;
-  left: 0;
-  background: #585148;
+  margin-top: 30px;
+  font-size: 27px;
+  font-family: 'Barrio', sans-serif;
 }
 
 #wrapper {
@@ -138,93 +106,136 @@
   margin: 0;
   margin-left: 20px;
   line-height: 65px;
-  display: inline-block;
 }
 
-#menu-toggle {
-  display: none;
+#task-manager {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 800px;
+  font-size: 52px;
+  background-image: url('images/task-image.png');
+  background-position: top;
 }
 
-.inset {
-  padding: 20px;
+#task-manager h1 {
+  font-size: 72px;
+  color: #008000;
+  font-family: 'Barrio', sans-serif;
+}
+
+#task-manager p {
+  font-size: 34px;
+  color: #008000;
+  font-family: 'Oswald', sans-serif;
+}
+
+#input-box {
+  text-align: center;
+  width: 800px;
+  height: 45px;
+  font-weight: 500;
+  font-size: 24px;
+  font-family: 'Oswald', sans-serif;
+  color: #008000;
+  box-shadow: 2 2px 2px #e5e5e5;
+}
+
+#all-tasks li {
+  text-align: center;
+  width: 800px;
+  font-size: 34px;
+  font-family: 'Oswald', sans-serif;
+  border-radius: 5px;
+  box-shadow: 0 3px 2px #e5e5e5;
+  margin: 10px;
+  margin-left: 0;
+  padding: 14px 50px 14px 14px;
+}
+
+#incompleted li {
+  color: #f0f;
+}
+
+#completed li {
+  color: #000080;
+}
+
+#break-line {
+  width: 890px;
+  max-height: 30px;
+}
+
+.input-group {
+  box-shadow: 0 3px 2px #e5e5e5;
+  margin: 10px;
+}
+
+.icons {
+  float: right;
+  width: 100px;
+  height: 45px;
+}
+
+.icons button {
+  float: left;
+  font-size: 30px;
+  width: 50px;
+  height: 45px;
+  position: relative;
+  box-shadow: none;
+  outline: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icons button:last-child::before {
+  content: '';
+  width: 3px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background: #008000;
 }
 
 #journal-page {
-  position: absolute;
-  display: block;
+  position: fixed;
   margin: auto;
-  background-image: url('http://www.gardensandcrafts.com/images/printables/gj6.jpg');
+  background-image: url('https://cdn.dribbble.com/users/579540/screenshots/3307540/more-icons.png');
   background-size: cover;
-  width: 1000px;
-  height: 1250px;
+  width: 100%;
+  height: 100%;
   opacity: 0.6;
-  z-index: -1;
 }
 
 #journal-form {
   position: relative;
   background: none;
   border-radius: 10px;
-  top: 200px;
+  border-width: thick;
+  top: 100px;
   left: 100px;
-  height: 930px;
   width: 800px;
-  color: #a555de;
-  font-size: 19px;
-}
-
-#journal-title {
-  text-align: center;
-  position: relative;
-  background: none;
-  border-radius: 10px;
-  border-color: #a555de;
-  border-width: thin;
-  top: 180px;
-  left: 110px;
-  height: 50px;
-  width: 370px;
-  color: #a555de;
-  font-size: 19px;
-}
-
-#journal-date {
-  text-align: center;
-  position: relative;
-  background: none;
-  border-radius: 10px;
-  border-color: #a555de;
-  border-width: thin;
-  top: 180px;
-  left: 150px;
-  height: 50px;
-  width: 370px;
+  height: 700px;
   color: #a555de;
   font-size: 19px;
 }
 
 #journal-save {
   color: white;
-  display: inline-block;
   position: relative;
   width: 800px;
-  top: 185px;
+  top: 87px;
   left: 100px;
   background-color: #a555de;
 }
 
-#main-page {
-  position: fixed;
-  margin: auto;
-  background-image:
-    linear-gradient(
-      rgba(44, 187, 185, 0.6),
-      rgba(44, 187, 185, 0.6)
-    ),
-    url(images/calender.png);
-  background-size: cover;
-  width: 100%;
-  height: 100%;
+.date {
+  font-family: 'Oswald', sans-serif;
+  font-size: 34px;
+  color: #f0f;
+  margin-left: 100px;
 }
 
 #recipes-updates h2 {
@@ -243,18 +254,26 @@
 }
 
 .new-disc h4 {
+  font-family: 'Barrio', sans-serif;
   margin-top: 50px;
-  font-family: sans-serif;
 }
 
 .new-disc h5 {
-  font-family: sans-serif;
+  font-family: 'Barrio', sans-serif;
   font-size: 22px;
   font-style: italic;
   font-weight: bold;
 }
 
 .new-disc p {
-  font-family: sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 18px;
+}
+
+.button-design {
+  border-radius: 10px;
+  color: #f0f;
+  background-color: #008000;
+  margin-left: 20px;
+  width: 300px;
 }
