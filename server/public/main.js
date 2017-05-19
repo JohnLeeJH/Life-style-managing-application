@@ -76,18 +76,12 @@ addTask.addEventListener('click', function() {
 // journal feature
 function writeJournal() {
   const journalPage = document.getElementById('journal-page')
+  const date = document.createElement('p')
+  date.textContent = new Date().toDateString()
+  date.classList.add('date')
+  journalPage.appendChild(date)
 
   const journalFrame = document.createElement('div')
-
-  const journalTitle = document.createElement('input')
-  journalTitle.setAttribute('id', 'journal-title')
-  journalTitle.setAttribute('type', 'text')
-  journalTitle.setAttribute('placeholder', 'Title')
-
-  const journalDate = document.createElement('input')
-  journalDate.setAttribute('id', 'journal-date')
-  journalDate.setAttribute('type', 'text')
-  journalDate.setAttribute('placeholder', 'Date')
 
   const journalForm = document.createElement('textarea')
   journalForm.setAttribute('id', 'journal-form')
@@ -103,8 +97,6 @@ function writeJournal() {
   journalSave.textContent = 'Save Journal'
 
   journalPage.appendChild(journalFrame)
-  journalFrame.appendChild(journalTitle)
-  journalFrame.appendChild(journalDate)
   journalFrame.appendChild(journalForm)
   journalFrame.appendChild(journalSave)
 }
@@ -268,6 +260,7 @@ function cookingDirection(recipe) {
   recipeTitle.appendChild(descriptionDetails)
 
   const directionsName = document.createElement('h4')
+  directionsName.classList.add('new-disc')
   directionsName.textContent = recipe.name
   descriptionDetails.appendChild(directionsName)
 
@@ -328,6 +321,7 @@ function cookingDirection(recipe) {
   directionsSteps.appendChild(recipesCookingSteps)
 
   const closeDirections = document.createElement('input')
+  closeDirections.classList.add('button-design')
   closeDirections.setAttribute('type', 'button')
   closeDirections.setAttribute('value', 'Enjoy Cooking!')
   closeDirections.setAttribute('id', recipe.id)
